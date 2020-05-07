@@ -1,12 +1,10 @@
 @import url('/https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
 
-* {
+*{
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
 background-color: #e9e1e5;
-}
-
 }
 li,a,button{
     font-family: Monserrat, sans-serif;
