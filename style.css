@@ -121,7 +121,8 @@ h1{
 main a{
     background-color: transparent;
     text-decoration: none;
-    color: whitesmoke;
+    color: black;
+    font-size: 20px;
 }
 main a:hover{
     background-color: transparent;
