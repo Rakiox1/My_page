@@ -4,9 +4,39 @@
   padding: 0px;
 
 }
+/* burger-button */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?3ot2jt');
+  src:  url('../fonts/icomoon.eot?3ot2jt#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?3ot2jt') format('truetype'),
+    url('../fonts/icomoon.woff?3ot2jt') format('woff'),
+    url('../fonts/icomoon.svg?3ot2jt#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  }
+
+.icon-menu:before {
+  content: "\e9bd";
+}
 /*Header*/
 header{
-    display: inline-flex;
+  display: flex;
+    flex-wrap: wrap;
 
 }
 nav{
@@ -67,7 +97,6 @@ button{
 button:hover{
     background-color: rgba(245, 86, 192, 0.8);
 }
-/*Header*/
 /* main */
 .image-header{
   width: 1274px;
@@ -163,8 +192,121 @@ footer ul li a {
     text-decoration: none;
     text-shadow:  0px 0px 2px white;
 }
+ .burger-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color:rgba(0, 0, 0, .8);
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    position: fixed;
+    z-index: 4;
+    left: 5px;
+    top: 5px;
+    color: white;
+    display: none;
+ }
 /* responsive */
-  @media screen and (max-width: 320px){}
-@media screen and (max-width: 480px){}
+@media screen and (max-width: 1024px){
+ .container{
+  padding: 0 1em;
+}
+/* header */
+header{
+    height: auto;
+  position: relative;
+  padding: 2em;
+}
+nav{
+    display: inline-flex;
+    position: absolute;
+    left: 238px;
+    top: -92px;
+    z-index: 2;
+}
+li,a,button{
+    font-family: Monserrat, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf8f1;
+    text-decoration: none;
+}
+.logo{
+  display: block;
+cursor: pointer;
+width: 270px;
+height: 220px;
+margin-right: 9px;
+}
+.nav_links{
+    list-style: none;
+    grid-column: 2 / 4;
+  grid-row: 1 / 3;
+}
+.nav_links li {
+display: inline-block;
+padding:  0px 20px;
+
+
+}
+.nav_links li a{
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    color: black;
+    font-size: 25px;
+    
+}
+.nav_links li a:hover{
+    color: #0088a9;
+}
+button{
+    padding:  9px 25px;
+    background-color: #f2b5d4;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 25px;
+    justify-content: space-between;
+    margin-top: -8px;
+    margin-left: 18px;
+    
+}
+button:hover{
+    background-color: rgba(245, 86, 192, 0.8);
+}
+/* main */
+.box{
+   display: inline-table;
+   padding: 25px 5px 0;
+   flex-wrap: wrap;
+   
+}
+    
+.box-icon{
+    text-align: center;
+    position: absolute;
+   top: 822px;
+    z-index: 3;
+    padding-top: 3px;
+    margin-left: 139px;
+    width: 50px;
+     height: 47px;
+  }
+  .title{
+    font-size: 35px;
+    position: absolute;
+        top: 932px;
+        padding-left: 121px;
+  }
+  .title a:hover{
+    color: rgba(245, 86, 192, 0.8);
+    text-shadow:  0px 0px 2px white;
+  }
+}
 @media screen and (max-width: 767px){}
-@media screen and (max-width: 1024px){}
+@media screen and (max-width: 480px){}
+@media screen and (max-width: 320px){}
+
+
