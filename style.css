@@ -59,6 +59,23 @@ cursor: pointer;
 width: 270px;
 height: 220px;
 margin-right: 9px;
+  animation-name: logo;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-direction: alternate ;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+@keyframes logo{
+  0% {
+ opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.logo:hover{
+  animation-play-state: paused;
 }
 .nav_links{
     list-style: none;
@@ -106,10 +123,11 @@ button:hover{
   background-position: center;
   align-items: flex-end;
   display: inline-flex;
+
 }
+
 .button1{
   position: absolute;
-
 }
 .button2{
     position: absolute;
@@ -310,3 +328,120 @@ button:hover{
 @media screen and (max-width: 320px){}
 
 
+ .notification {
+            color: black;
+            width: 50px;
+           font-size: 25px;
+            height: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 32px;
+            left: 993px;
+        }
+
+        .notification:before {
+            content: "\f0f3";
+            font-family: "FontAwesome";
+            display: block;
+            transform-origin: center top;
+        }
+
+        .notification.notify:before {
+            animation-name: bell;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+        }
+
+        @keyframes bell {
+            0% {
+                transform: rotate(35deg);
+            }
+
+            12.5% {
+                transform: rotate(-30deg);
+            }
+
+            25% {
+                transform: rotate(25deg);
+            }
+
+            37.5% {
+                transform: rotate(-20deg);
+            }
+
+            50% {
+                transform: rotate(15deg);
+            }
+
+            62.5% {
+                transform: rotate(-10deg);
+            }
+
+            75% {
+                transform: rotate(5deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .notification:after {
+            font-size: 11px;
+            font-weight: bold;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            min-width: 14px;
+            height: 14px;
+
+
+            background: #ff4600;
+            border-radius: 50%;
+
+            font-family: Arial;
+            position: absolute;
+
+            top: 5px;
+            right: 0px;
+            content: attr(data-count);
+            opacity: 0;
+            transform: scale(.5);
+            transition: .3s;
+            will-change: opacity, transform;
+        }
+
+        .notification.show-count:after {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .btn {
+     padding:  9px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 13px;
+    justify-content: space-between;
+    margin-top: -8px;
+    margin-left: 18px;
+    position: absolute;
+    top: 32px;
+    left: 1062px;
+        }
+
+        .btn.primary {
+            background: #f2b5d4;
+        }
+
+        .btn.warning {
+            background: #ff463b;
+        }
+
+        .btn:active {
+            transform: scale(.9);

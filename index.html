@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="/Img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
 <body>
     <div class="container">
+        <button class="btn primary" id="Nbutton">Enviar notificación</button>
+        <div class="notification" id="notification"></div>
+
         <img class="logo" src="/Img/logo.png" alt=" logo">
         <header>
             <nav>
@@ -94,6 +98,21 @@
             </ul>
         </footer>
     </div>
+    <script>
+        const $button = document.getElementById('Nbutton');
+        const $bell = document.getElementById('notification');
+
+        $button.addEventListener('click', () => {
+            const count = Number($bell.getAttribute('data-count')) || 0;
+            $bell.setAttribute('data-count', count + 1);
+            $bell.classList.add('show-count');
+            $bell.classList.add('notify');
+        });
+
+        $bell.addEventListener('animationend', () => {
+            $bell.classList.remove('notify');
+        });
+    </script>
 </body>
 
 </html>
